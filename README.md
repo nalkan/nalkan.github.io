@@ -1,1 +1,0 @@
-# nalkan.github.io
