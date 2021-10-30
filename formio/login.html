@@ -1,22 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.form.min.css" crossorigin="anonymous">
-  </head>
-  <body>
-    <div id="header"></div>
-    <div id="formio"></div>
-    <script src="https://cdn.form.io/formiojs/formio.form.min.js" crossorigin="anonymous"></script>
-    <!--
+
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.form.min.css" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="formio"></div>
+  <script src="https://cdn.form.io/formiojs/formio.form.min.js" crossorigin="anonymous"></script>
+  <!--
         register: http://localhost:3001/#/form/617931bc9f4d46bc79120a37/
         login: http://localhost:3001/#/form/617931bc9f4d46bc79120a2e/
         test form 1: https://9a0a-176-234-90-157.ngrok.io/form/617b768312c8a705565debb9 
 
-    -->
+   
     <script>
         Formio.createForm(document.getElementById('formio'), 'https://9a0a-176-234-90-157.ngrok.io/form/617931bc9f4d46bc79120a2e');
-    </script>
-    <script type="text/javascript" src="/nav.js"></script>
-  </body>
+    </script> -->
+  <script type="text/javascript" src="/nav.js"></script>
+  <script type="text/javascript" src="/utils.js"></script>
+  <script>
+    loadForm('617931bc9f4d46bc79120a2e');
+  </script>
+</body>
+
 </html>
