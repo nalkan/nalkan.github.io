@@ -1,4 +1,8 @@
-var FORMIO_ENDPOINT = 'https://9a0a-176-234-90-157.ngrok.io';
+const FORMIO_ENDPOINT = 'https://9a0a-176-234-90-157.ngrok.io';
+
+const Utils = {
+}
+
 function loadForm(formId) {
     try {
         Formio.createForm(document.getElementById('formio'), FORMIO_ENDPOINT + '/form/' + formId).then(function (form) {
@@ -11,17 +15,20 @@ function loadForm(formId) {
             });
         }).catch(e => {
             if ('Unauthorized' === e) {
-                // localStorage.removeItem('');
                 console.log(localStorage);
-                console.log(Object.keys(localStorage));
-                const keys = Object.keys(localStorage).filter(i => i.startsWith('formio'));
-                console.log(keys);
-                for (var key in keys) {
-                    localStorage.removeItem(key);
+                const arr = []; // Array to hold the keys
+                for (let i = 0; i < localStorage.length; i++) {
+                    if (localStorage.key(i).substring(0, 5) == 'formio') {
+                        arr.push(localStorage.key(i));
+                    }
+                }
+                for (let i = 0; i < arr.length; i++) {
+                    localStorage.removeItem(arr[i]);
                 }
                 console.log(localStorage);
-                console.log(Object.keys(localStorage));
-                document.location.replace('/formio/login.html')
+                setTimeout(() => {
+                    document.location.replace('/formio/login.html')
+                }, 500);
             } else {
                 console.log('Global error');
                 console.log(e);
