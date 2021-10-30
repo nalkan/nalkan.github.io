@@ -8,5 +8,8 @@ function loadForm(formId) {
             }**/
             console.log(err);
         });
+    }).catch(e => {
+        console.log('Global error');
+        console.log(e);
     });
 }
