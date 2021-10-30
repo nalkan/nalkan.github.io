@@ -11,5 +11,6 @@ function loadForm(formId) {
     }).catch(e => {
         console.log('Global error');
         console.log(e);
+        console.log(JSON.stringify(e));
     });
 }
