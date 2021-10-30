@@ -26,6 +26,12 @@ function loadForm(formId) {
                     localStorage.removeItem(arr[i]);
                 }
                 console.log(localStorage);
+                localStorage.removeItem('formioUser');
+                localStorage.removeItem('formioToken');
+                console.log(localStorage);
+                window.localStorage.removeItem('formioUser');
+                window.localStorage.removeItem('formioToken');
+                console.log(localStorage);
                 setTimeout(() => {
                     document.location.replace('/formio/login.html')
                 }, 500);
