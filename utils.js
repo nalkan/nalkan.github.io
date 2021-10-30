@@ -10,9 +10,18 @@ function loadForm(formId) {
                 console.log(err);
             });
         }).catch(e => {
-            console.log('Global error');
-            console.log(e);
-            console.log(JSON.stringify(e));
+            if ('Unauthorized' === e) {
+                // localStorage.removeItem('');
+                const keys = Object.keys(localStorage).filter(i => i.startsWith('formio'));
+                for (var key in keys) {
+                    localStorage.removeItem(key);
+                }
+                document.location.replace('/formio/login.html')
+            } else {
+                console.log('Global error');
+                console.log(e);
+                console.log(JSON.stringify(e));
+            }
         });
     } catch (ex) {
         console.log('try-catch');
