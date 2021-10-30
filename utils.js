@@ -12,10 +12,15 @@ function loadForm(formId) {
         }).catch(e => {
             if ('Unauthorized' === e) {
                 // localStorage.removeItem('');
+                console.log(localStorage);
+                console.log(Object.keys(localStorage));
                 const keys = Object.keys(localStorage).filter(i => i.startsWith('formio'));
+                console.log(keys);
                 for (var key in keys) {
                     localStorage.removeItem(key);
                 }
+                console.log(localStorage);
+                console.log(Object.keys(localStorage));
                 document.location.replace('/formio/login.html')
             } else {
                 console.log('Global error');
